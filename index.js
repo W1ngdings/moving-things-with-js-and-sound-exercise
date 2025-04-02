@@ -9,6 +9,7 @@ function moveDodgerLeft() {
   
     if (left > 0) {
       dodger.style.left = `${left - 1}px`;
+      playSoundOnMovement();
     }
   }
 
@@ -33,8 +34,10 @@ function moveDodgerRight() {
     const left = parseInt(leftNumbers, 10);
 
     if (left < 360) {
-        dodger.style.left = `${left + 1}px`
+        dodger.style.left = `${left + 1}px`;
+        playSoundOnMovement();
     }
+
   }
 
 function moveDodgerUp() {
@@ -42,7 +45,8 @@ function moveDodgerUp() {
     const bottom = parseInt(bottomNumbers, 10);
 
     if (bottom < 380) {
-        dodger.style.bottom = `${bottom + 1}px`
+        dodger.style.bottom = `${bottom + 1}px`;
+        playSoundOnMovement();
     }
 
 }
@@ -52,8 +56,15 @@ function moveDodgerDown() {
     const bottom = parseInt(bottomNumbers, 10);
 
     if (bottom > 0) {
-        dodger.style.bottom = `${bottom - 1}px`
+        dodger.style.bottom = `${bottom - 1}px`;
+        playSoundOnMovement();
     }
 
 }
 
+const movementSound = document.getElementById("movementSound");
+
+function playSoundOnMovement() {
+    movementSound.currentTime = 0;
+    movementSound.play ();
+}
