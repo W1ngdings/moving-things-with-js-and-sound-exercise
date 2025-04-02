@@ -60,7 +60,7 @@ function moveDodgerUp() {
         playSoundOnMovement();
         
     }
-    if (bottom === 380) {
+    if (bottom === 340) {
         playGameOverSound();
     }
 }
