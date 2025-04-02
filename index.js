@@ -20,9 +20,12 @@ function moveDodgerLeft() {
     if (e.key === "ArrowRight") {
         moveDodgerRight();
       }
+    if (e.key === "ArrowUp") {
+        moveDodgerUp();
+      }
   });
 
-  function moveDodgerRight() {
+function moveDodgerRight() {
     const leftNumbers = dodger.style.left.replace("px", "");
     const left = parseInt(leftNumbers, 10);
 
@@ -30,3 +33,14 @@ function moveDodgerLeft() {
         dodger.style.left = `${left + 1}px`
     }
   }
+
+function moveDodgerUp() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers, 10);
+
+    if (bottom < 380) {
+        dodger.style.bottom = `${bottom + 1}px`
+    }
+
+}
+
